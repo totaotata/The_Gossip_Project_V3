@@ -4,6 +4,7 @@
 Welcome to the Gossip Project, in this repository you will find all the rails app to run it.
 
 Please clone this repository and then execute these command lines in your terminal :
+
 $ bundle install
 
 $ rails db:migrate
