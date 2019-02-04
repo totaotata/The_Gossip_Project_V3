@@ -1,24 +1,19 @@
+
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the Gossip Project, in this repository you will find all the rails app to run it.
 
-Things you may want to cover:
+Please clone this repository and then execute these command lines in your terminal :
+$ bundle install
+$ rails db:migrate
+$ rails db:seed
 
-* Ruby version
+The Gossip app is now ready !
 
-* System dependencies
+To use it in your browser please enter this last command in your terminal :
+$ rails server
 
-* Configuration
+And go to this address in your browser http://localhost:3000/welcome/user
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby version : 2.5.1
+Rails version : 5.2.2

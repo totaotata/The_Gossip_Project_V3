@@ -1,5 +1,7 @@
+
 class GossipController < ApplicationController
   def show
-    @gossip = Gossip.find(params[:id])
+    first_occurence= Gossip.first.id
+    @gossip = Gossip.find( first_occurence + params[:id].to_i)
   end
 end
