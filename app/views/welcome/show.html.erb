@@ -5,5 +5,17 @@
     </head>
     <body>
       <h1>Welcome <%= @params %></h1>
-    </body>
+      <p>Liste de potins:</p>
+        <center>
+        <div class="card-columns">
+          <% Gossip.all.each_with_index do |gossip, id| %>
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header bg-transparent border-dark"><%= gossip.user.first_name %></div>
+            <div class="card-body text-dark"><h5 class="card-title"><%=gossip.title%></h5></div>
+            <div class="card-footer bg-transparent border-dark"><a href="/gossip/<%= id + 1 %>">Voir plus ...</a></div>
+            </div>
+          <% end %>
+        </div>
+      </center>
+  </body>
 </html>
