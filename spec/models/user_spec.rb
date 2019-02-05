@@ -9,7 +9,6 @@ RSpec.describe User, type: :model do
   it "has a valid factory" do
     expect(build(:user)).to be_valid
   end
-
   context "validation" do
     it "is valid with valid attributes" do
       expect(@user).to be_a(User)
