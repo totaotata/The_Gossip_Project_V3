@@ -2,10 +2,10 @@
 class GossipController < ApplicationController
   def show
     first_occurence= Gossip.first.id
-    @gossip = Gossip.find( first_occurence + params[:id].to_i - 1) 
+    @gossip = Gossip.find( first_occurence + params[:id].to_i - 1)
   end
   def create
-  @user = User.find(22)
+  @user = User.find(21)
   @gossip = Gossip.new('user_id' => @user.id,
                         'title' => params[:title],
                         'content' => params[:content])
