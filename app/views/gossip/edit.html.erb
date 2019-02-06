@@ -1,18 +1,20 @@
 <html>
   <body>
+    <center><h1>Editer le Gossip</h1></center>
     <div class="container col-md-8 order-md-1">
-    <%= form_tag url_for(action: 'create'), method: "post" do %>
+    <%= form_for @gossip do |f| %>
     <div class="form-group">
-        <%= label_tag 'Titre de ton gossip :' %>
-        <%= text_field_tag 'title', @gossip.title, class: "form-control", placeholder:"Entre 3 et 14 caractères" %>
+        <label>Titre du gossip</label>
+        <%= f.text_field :title, class: "form-control", placeholder: @gossip.title %>
         <br />
     </div>
     <div class="form">
-        <%= label_tag 'Contenu du gossip :' %>
-        <%= text_area_tag 'content', @gossip.content, class: "form-control", placeholder:"140 caractères max" %>
+        <label>Contenu du gossip</label>
+        <%= f.text_area :content, class: "form-control", placeholder: @gossip.content %>
         <br />
         <center>
-        <%= submit_tag "Créer ton Gossip", class: "btn btn-primary" %>
+        <button type="submit" class="btn btn-primary">Modifier le Gossip</button>
+        </center>
     </div>
     <% end %>
     <br />

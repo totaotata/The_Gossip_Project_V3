@@ -12,14 +12,18 @@ Gossip.destroy_all
 Tag.destroy_all
 GossipTagJoiner.destroy_all
 
+
 10.times do
   city = City.create!(name: Faker::Nation.capital_city, zip_code: Faker::Address.zip_code)
 end
-10.times do
-  user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Lorem.sentence, email: Faker::Internet.email, age: (rand(19..100)))
+1.times do
+  anonymous = User.create!(first_name: "Anonymous", last_name: Faker::Name.last_name, description: Faker::ChuckNorris.fact, email: "anonymous@thp.com", age: (rand(19..100)), city_id: (rand(City.first.id..City.last.id)))
+end
+9.times do
+  user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Lorem.sentence, email: Faker::Internet.email, age: (rand(19..100)), city_id: (rand(City.first.id..City.last.id)))
 end
 20.times do
-  gossip = Gossip.create!(title: Faker::Lorem.word, content: Faker::ChuckNorris.fact, user_id: (rand(User.first.id..User.last.id)))
+  gossip = Gossip.create!(title: Faker::Pokemon.name, content: Faker::ChuckNorris.fact, user_id: (rand(User.first.id..User.last.id)))
 end
 10.times do
   tag = Tag.create!(title: Faker::LeagueOfLegends.quote)
@@ -29,7 +33,4 @@ end
 end
 10.times do
   pm = PrivateMessage.create!(content: Faker::HowIMetYourMother.quote, sender_id: (rand(User.first.id..User.last.id)), recipient_id: (rand(User.first.id..User.last.id)))
-end
-1.times do
-  anonymous = User.create!(first_name: "Anonymous", last_name: Faker::Name.last_name, description: Faker::Lorem.sentence, email: Faker::Internet.email, age: (rand(19..100)))
 end

@@ -3,20 +3,24 @@
   <head>
     <title>TheGossipProjectV3</title>
     </head>
-    <body>
-      <h1>Welcome <%= @params %></h1>
-      <p>Liste de potins:</p>
-        <center>
+    <body class="body">
+
+      <div class="jumbotron">
+        <hr>
+    <h1> Welcome to The Gossip Project</h1>
+
+    <h2 class="display-3"><%= @params %></h2>
+<%= link_to "Pour créer un nouveau Gossip c'est par ici !", new_gossip_path %>
+    <hr>
+    </div>
         <div class="card-columns">
           <% Gossip.all.each_with_index do |gossip, id| %>
             <div class="card border-dark mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-transparent border-dark"><%= gossip.user.first_name %></div>
-            <div class="card-body text-dark"><h5 class="card-title"><%=gossip.title%></h5></div>
-            <div class="card-footer bg-transparent border-dark"><a href="/gossip/<%= id + 1 %>">Voir plus ...</a></div>
+            <div class="card-header bg-transparent border-dark"><a href="/user/<%= gossip.user.id%>"><%= gossip.user.first_name %></a> </div>
+            <div class="card-body text-dark"><h5 class="card-title"><%= gossip.title %></h5></div>
+            <div class="card-footer bg-transparent border-dark"><a href="/gossip/<%= id + 1%>">Voir le gossip</a></div>
             </div>
           <% end %>
         </div>
-      </center>
-      <%= link_to "Créer un nouveau Gossip ICI", new_gossip_path %>
   </body>
 </html>

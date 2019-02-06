@@ -1,11 +1,10 @@
 
 class GossipController < ApplicationController
   def show
-    first_occurence= Gossip.first.id
-    @gossip = Gossip.find( first_occurence + params[:id].to_i - 1)
+    @gossip = Gossip.find(params[:id])
   end
   def create
-  @user = User.find(21)
+    @user = User.find(1)
   @gossip = Gossip.new('user_id' => @user.id,
                         'title' => params[:title],
                         'content' => params[:content])
@@ -19,5 +18,18 @@ if @gossip.save # essaie de sauvegarder en base @gossip
 end
 def new
   @gossip = Gossip.new
+end
+def edit
+  @gossip = Gossip.find(params[:id])
+end
+def update
+  @gossip = Gossip.find(params[:id])
+  post_params = params.require(:gossip).permit(:title, :content)
+  @gossip.update(post_params)
+  if @gossip.update(post_params)
+    redirect_to welcome_path
+  else
+    render :edit
+  end
 end
 end

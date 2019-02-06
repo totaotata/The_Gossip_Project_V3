@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ .card-columns {
+  background-color:#E8E8E8;
+ }
+ .body {
+   text-align: center;
+ }
+ div.jumbotron {
+   background-color: #E8E8E8;
+   margin-bottom: 0px;
+ }
+ hr {
+   color: black;
+ }

@@ -1,0 +1,13 @@
+<h1><%= @city.name%></h1>
+
+<div class="card-columns">
+  <% @city.users.each do |user| %>
+  <% user.gossips.each do |gossip| %>
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+    <div class="card-header bg-transparent border-dark"><a href="/user/<%= gossip.user.id%>"><%= gossip.user.first_name %></a> </div>
+    <div class="card-body text-dark"><h5 class="card-title"><%= gossip.title %></h5></div>
+    <div class="card-footer bg-transparent border-dark"><a href="/gossip/<%= gossip.id.to_i + 1 %>">Voir le gossip</a></div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
