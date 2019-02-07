@@ -2,13 +2,19 @@ class UserController < ApplicationController
   def show
     @user = User.find(params[:id])
     @city = @user.city_id
+    if @city== nil
+      @city_name = City.first
+    else
     @city_name = City.find(@city)
   end
+  end
+
+  
   def create
     @user = User.new('email' => params[:email],
                     'password' => params[:password],
                      'password_confirmation' => params[:password_confirmation],
-      'first_name' => params[:email])
+      'first_name' => params[:email] )
     if @user.save
       redirect_to welcome_path
     else
