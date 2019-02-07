@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sessions, except: [:index, :edit, :update]
   get 'city/show'
   resources :user, only: [:new, :create]
   resources :city, only: [:show]
