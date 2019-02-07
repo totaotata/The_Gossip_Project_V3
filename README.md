@@ -20,5 +20,8 @@ $ rails server
 And go to this address in your browser http://localhost:3000/welcome/user
 
 or go to this address in your browser https://gentle-hamlet-99769.herokuapp.com/
+
+
+
 Ruby version : 2.5.1
 Rails version : 5.2.2
