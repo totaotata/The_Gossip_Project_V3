@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'city/show'
   resources :city, only: [:show]
-  resources :gossip, only: [:new, :create, :edit, :update]
+  resources :gossip, only: [:new, :create, :edit, :update, :destroy]
   get '/user/:id', to: 'user#show'
   get '/welcome', to: 'welcome#show'
   get '/gossip/:id', to: 'gossip#show'

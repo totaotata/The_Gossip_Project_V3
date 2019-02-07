@@ -4,7 +4,7 @@ class GossipController < ApplicationController
     @gossip = Gossip.find(params[:id])
   end
   def create
-    @user = User.find(1)
+  @user = User.find(1)
   @gossip = Gossip.new('user_id' => @user.id,
                         'title' => params[:title],
                         'content' => params[:content])
@@ -31,5 +31,10 @@ def update
   else
     render :edit
   end
+end
+def destroy
+  @gossip = Gossip.find(params[:id])
+  @gossip.destroy
+  redirect_to welcome_path
 end
 end
