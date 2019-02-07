@@ -8,7 +8,7 @@ class UserController < ApplicationController
     @user = User.new('email' => params[:email],
                     'password' => params[:password],
                      'password_confirmation' => params[:password_confirmation],
-      'name' => params[:email])
+      'first_name' => params[:email])
     if @user.save
       redirect_to welcome_path
     else
