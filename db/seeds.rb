@@ -17,10 +17,10 @@ GossipTagJoiner.destroy_all
   city = City.create!(name: Faker::Nation.capital_city, zip_code: Faker::Address.zip_code)
 end
 1.times do
-  anonymous = User.create!(first_name: "Anonymous", last_name: Faker::Name.last_name, description: Faker::ChuckNorris.fact, email: "anonymous@thp.com", age: (rand(19..100)), city_id: (rand(City.first.id..City.last.id)))
+  anonymous = User.create!(password: "123455", first_name: "Anonymous", last_name: Faker::Name.last_name, description: Faker::ChuckNorris.fact, email: "anonymous@thp.com", age: (rand(19..100)), city_id: (rand(City.first.id..City.last.id)))
 end
 9.times do
-  user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Lorem.sentence, email: Faker::Internet.email, age: (rand(19..100)), city_id: (rand(City.first.id..City.last.id)))
+  user = User.create!(password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Lorem.sentence, email: Faker::Internet.email, age: (rand(19..100)), city_id: (rand(City.first.id..City.last.id)))
 end
 20.times do
   gossip = Gossip.create!(title: Faker::Pokemon.name, content: Faker::ChuckNorris.fact, user_id: (rand(User.first.id..User.last.id)))
