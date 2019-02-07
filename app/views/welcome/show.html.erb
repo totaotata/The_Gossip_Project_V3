@@ -14,11 +14,11 @@
     <hr>
     </div>
         <div class="card-columns">
-          <% Gossip.all.each_with_index do |gossip, id| %>
+          <% Gossip.find_each do |gossip| %>
             <div class="card border-dark mb-3" style="max-width: 18rem;">
             <div class="card-header bg-transparent border-dark"><a href="/user/<%= gossip.user.id%>"><%= gossip.user.first_name %></a> </div>
             <div class="card-body text-dark"><h5 class="card-title"><%= gossip.title %></h5></div>
-            <div class="card-footer bg-transparent border-dark"><a href="/gossip/<%= id + 1%>">Voir le gossip</a></div>
+            <div class="card-footer bg-transparent border-dark"><a href="/gossip/<%= gossip.id %>">Voir le gossip</a></div>
             </div>
           <% end %>
         </div>
