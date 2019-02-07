@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'city/show'
+  resources :user, only: [:new, :create]
   resources :city, only: [:show]
   resources :gossip, only: [:new, :create, :edit, :update, :destroy]
   get '/user/:id', to: 'user#show'
