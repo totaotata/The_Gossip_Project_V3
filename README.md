@@ -10,7 +10,7 @@ $ bundle install
 $ rails db:migrate
 
 
-if the terminal said password_digest already exit please, comment the ligne 3 of the migration Add_Password_Digest_To_Users. make the migrate and uncomment the same line. 
+if the terminal said password_digest already exit please, comment the ligne 3 of the migration Add_Password_Digest_To_Users. make the migrate and uncomment the same line.
 
 $ rails db:seed
 
@@ -21,7 +21,7 @@ $ rails server
 
 And go to this address in your browser http://localhost:3000/welcome/user
 
-or go to this address in your browser https://tranquil-citadel-60772.herokuapp.com/
+or go to this address in your browser https://thegossipv3.herokuapp.com/
 
 
 
