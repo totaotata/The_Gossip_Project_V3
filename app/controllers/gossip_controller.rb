@@ -1,6 +1,8 @@
 
 class GossipController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user, only: [:new ,:edit, :destroy]
+  before_action :user_match, only: [:edit, :destroy]
+
   def show
     @gossip = Gossip.find(params[:id])
   end
@@ -43,4 +45,11 @@ class GossipController < ApplicationController
       redirect_to new_session_path
     end
   end
+  def user_match
+  @gossip = Gossip.find(params[:id])
+  unless current_user.id == @gossip.user.id
+    flash[:danger] = "You are not allowed."
+    redirect_to welcome_path
+  end
+end
 end

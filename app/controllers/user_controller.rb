@@ -8,8 +8,6 @@ class UserController < ApplicationController
     @city_name = City.find(@city)
   end
   end
-
-  
   def create
     @user = User.new('email' => params[:email],
                     'password' => params[:password],
