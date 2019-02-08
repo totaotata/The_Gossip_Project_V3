@@ -7,5 +7,5 @@
 <p><%= @gossip.created_at %></p>
 <p><%= @gossip.content %></p>
 
-<%= link_to "Editer le gossip", 'edit_gossip_path', class:"btn btn-primary"%><br /><br />
+<%= link_to "Editer le gossip", edit_gossip_path, class:"btn btn-primary"%><br /><br />
 <%= link_to "Supprimer le gossip", @gossip, method: :delete, data: {confirm: "Êtes-vous sûr de supprimer ce gossip ?"}, class:"btn btn-danger"%>
